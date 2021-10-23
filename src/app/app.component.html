@@ -1,0 +1,41 @@
+<app-header (featureSelected)="onNavigate($event)"></app-header>
+<div class="container">
+  <div
+    class="search-results"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()"
+  >
+  <app-articles [articles]=loadedFeature></app-articles>
+  </div>
+
+  <div class="row pb-5">
+    <div class="col-md-12 p-5">
+      <ngx-spinner
+        bdOpacity="0.9"
+        bdColor=""
+        size="default"
+        color="#581f87"
+        type="ball-pulse-sync"
+        [fullScreen]="false"
+      >
+      </ngx-spinner>
+    </div>
+  </div>
+
+  <div *ngIf="!notEmptyPostTechnology" class="row pb-5">
+    <div class="col-md-12 d-flex justify-content-center">
+      <div class="text-muted h6 alert alert-secondary p-2">
+        No more items to show
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!notEmptyPostSports" class="row pb-5">
+    <div class="col-md-12 d-flex justify-content-center">
+      <div class="text-muted h6 alert alert-secondary p-2">
+        No more items to show
+      </div>
+    </div>
+  </div>
+</div>

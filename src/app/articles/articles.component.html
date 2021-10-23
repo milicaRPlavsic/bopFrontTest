@@ -1,0 +1,41 @@
+
+<div>
+  <input class="form-control search-field" [(ngModel)]="searchText"
+   type="text"
+   placeholder="Search for aticle ..." />
+</div>
+<div id="table-div" >
+        <table>
+          <thead>
+          <tr class="header">
+ 
+            <th [appSort]="articles" data-order="desc" data-name="title" style="width: 30%">Title</th>
+            <th tyle="width: 30%">Description</th>
+            <th [appSort]="articles" data-order="desc" data-name="author" style="width: 13%">Author</th>
+            <th [appSort]="articles" data-order="desc" data-name="publishedAt" style="width: 13%">Published at</th>
+            <th style="width: 9%">Link</th>
+            <th style="width: 5%">Image</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let article of articles | searchFilter: searchText">
+            
+            <td >{{article['title']}}</td>
+            <td style='font-size: 9px'>{{article['description'].slice(0,150)}}...</td>
+            <td >{{article['author']}}</td>
+            <td >{{article['published_at']}}</td>
+            <td>
+              <a [href]="article['url']" target="_blank" rel="noreferrer noopener">Link</a>
+            </td>
+            <td>
+              <img *ngIf="article['image']" style="height:100%" style='border-radius: 50%;' width="40" height="30" [src]="article['image']">
+            </td>
+          </tr> 
+        </tbody>
+        </table>
+      </div>
+
+      
+
+
