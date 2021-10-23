@@ -14,7 +14,7 @@ export class NewsArticleService {
       const param=type==='technology'? 'technology' : 'sports'
         this.http
           .get<{ data: Article[]; pagination: {total : number} }>(
-            `http://api.mediastack.com/v1/news?access_key=eacea93c612d7f9fed2bd84a5cb459f5&categories=${param}&languages=en`
+            `http://api.mediastack.com/v1/news?access_key=46970f216183bd6e1d6d60019bd23454&categories=${param}&languages=en`
           )
           .subscribe((respData) => {
             for(let art of respData.data) {

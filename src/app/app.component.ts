@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
         this.offsetTechology += 25;
         this.http
           .get<{ data: Article[]; pagination: { count: number } }>(
-            `http://api.mediastack.com/v1/news?access_key=eacea93c612d7f9fed2bd84a5cb459f5&categories=technology&languages=en&offset=${this.offsetTechology}`
+            `http://api.mediastack.com/v1/news?access_key=46970f216183bd6e1d6d60019bd23454&categories=technology&languages=en&offset=${this.offsetTechology}`
           )
           .subscribe((respData) => {
             for (let art of respData.data) {
@@ -71,7 +71,7 @@ export class AppComponent implements OnInit {
         this.offsetSports += 25;
         this.http
           .get<{ data: Article[]; pagination: { count: number } }>(
-            `http://api.mediastack.com/v1/news?access_key=eacea93c612d7f9fed2bd84a5cb459f5&categories=sports&languages=en&offset=${this.offsetSports}`
+            `http://api.mediastack.com/v1/news?access_key=46970f216183bd6e1d6d60019bd23454&categories=sports&languages=en&offset=${this.offsetSports}`
           )
           .subscribe((respData) => {
             for (let art of respData.data) {

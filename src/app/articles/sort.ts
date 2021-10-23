@@ -8,13 +8,12 @@ export class Sort {
 
     constructor() { }
 
-    public startSort(property:any, order:any, type:any = "") {
+    public startSort(property:any, order:any, type: string) {
         if (order === "desc") {
             this.sortOrder = -1;
         }
         return (a: any, b:any) => {
-            if (type === "date") {
-                console.log('usao');
+            if (type === "data") {
                 return this.sortData(new Date(a[property]), new Date(b[property]));
             } else {
                 return this.collator.compare(a[property], b[property]) * this.sortOrder;
