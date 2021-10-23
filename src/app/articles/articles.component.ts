@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 import { Article } from '../article.model';
-import {Sort} from '@angular/material/sort';
 
 @Component({
   selector: 'app-articles',

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NewsArticleService } from './newsArticle.service';
 import { Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NgxSpinnerService } from 'ngx-spinner';
 import { Article } from './article.model';
 
 @Component({
@@ -28,7 +27,6 @@ export class AppComponent implements OnInit {
   constructor(
     private newsService: NewsArticleService,
     private http: HttpClient,
-    private spinner: NgxSpinnerService
   ) {}
 
   ngOnInit() {

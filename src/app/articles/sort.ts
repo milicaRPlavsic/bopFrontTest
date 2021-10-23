@@ -14,6 +14,7 @@ export class Sort {
         }
         return (a: any, b:any) => {
             if (type === "date") {
+                console.log('usao');
                 return this.sortData(new Date(a[property]), new Date(b[property]));
             } else {
                 return this.collator.compare(a[property], b[property]) * this.sortOrder;
